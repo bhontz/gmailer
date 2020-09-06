@@ -2,7 +2,7 @@
 
 Use your GMAIL account to send templated bulk emails to recipients.  Note that GMAIL has a stated limitation of 500 email sends from an account per day.
 
-This project uses the jinja2 templating engine which supports the "double mustache" syntax for variable substituion, as well as conditionals and looping.  Refer to the doc at https://jinja.palletsprojects.com/en/2.11.x/templates/ and as well the example provided within the templates folder of this repo.
+This project uses the jinja2 templating engine which supports the "double mustache" syntax for variable substitution, as well as conditionals and looping.  Refer to the doc at https://jinja.palletsprojects.com/en/2.11.x/templates/ and as well the example provided within the templates folder of this repo.
 
 You can store your mailing list and associated segmentation and/or informational fields in either a CSV file or a Google Sheet.  If you are using a CSV file, the CSV file needs to be in the same folder as your main module.
 If you plan to use Google Sheets, you must first create a Google OAuth credentials file; that process is documented here: https://datasheets.readthedocs.io/en/latest/getting_oauth_credentials.html
