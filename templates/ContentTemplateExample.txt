@@ -1,0 +1,17 @@
+WHAT THIS COMMUNICATION IS ALL ABOUT
+
+Dear {{FNAME}} {{LNAME}},
+
+A gracious "thank you" for agreeing to participating within our upcoming {{CLASS}} class!
+
+Here is some information we want to share about you. We know that you are {{TAG1}} and as well {{TAG2}}.
+
+Further,{% if TAG1 == "NEW" %} thank you for being a new user! {% else %} welcome back to another informative class! {% endif %}
+
+{{FNAME}}, once again, thank you for your kind support!
+
+Kind Regards,
+
+Organization Communication Manager
+Volunteer,
+Your Organization

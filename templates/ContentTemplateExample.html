@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser Window Title</title>
+</head>
+<body>
+<h1>WHAT THIS COMMUNICATION IS ALL ABOUT</h1>
+<p>
+Dear {{FNAME}} {{LNAME}},
+</p>
+<p style="font-weight:bold;">
+A gracious &ldquo;thank you&rdquo; for agreeing to participating within our upcoming {{CLASS}} class!
+</p>
+<p style="margin-left:30pt;margin-right:30pt;">
+Here is some information we want to share about you.&nbsp;  We know that you are {{TAG1}} and as well {{TAG2}}.&nbsp;
+Further,{% if TAG1 == "NEW" %} thank you for being a new user! {% else %} welcome back to another informative class! {% endif %} &nbsp;
+</p>
+<p>
+{{FNAME}}, once again, thank you for your kind support!
+</p>
+<p>
+Kind Regards,
+</p>
+Organization Communication Manager<br/>
+Volunteer,<br/>
+Your Organization<br/>
+</p>
+</body>
+</html>
