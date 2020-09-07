@@ -110,7 +110,8 @@ class Gmailer():
 
     def LoadCSV(self, strPathFilename, lstFloatFields=[]):
         """
-            Returns a list of dictionaries formed by parsing a CSV file (strPathFilename) with a row header.
+            Populates self.lstMailingList to contain a list of dictionaries formed by parsing a CSV file (strPathFilename)
+            with a row header.
             You can specify fields that need to be forced to floats by adding a list of the field names
             as the option parameter lstFloatFields.  This is useful if you are trying to replicate the behavior
             of a Google Sheet database, which will force numeric fields to be floats.
@@ -138,7 +139,7 @@ class Gmailer():
 
     def filterList(self, f):
         """
-            This module's parameter is a filter function that will filter the lstMailingList based
+            This method's parameter is a filter function that will filter the lstMailingList based
             upon a query of the fields of lstMailingList.  See the README.md file for examples
         """
         self.lstMailingList = list(f)
@@ -148,8 +149,8 @@ class Gmailer():
     def __simpleEmailMessage(self, recipientEmailAddress, html, text):
         """
             Here we're using some of python's standard methods to send a simple email.
-            I didn't finish this as you need to add your gmail account pw to make this work.
-            Left it in here for you to discover and fix up.
+            Note the call to SMTP_SLL is specific to GMAIL and would need to be changed
+            if you are using an alternative SMTP server.
         """
         msg = MIMEMultipart('alternative')
         msg['Subject'] = self.subject
@@ -200,10 +201,11 @@ class Gmailer():
 
     def testTemplate(self):
         """
-            This method is not required but it is handy for checking your template logic.
-            Comment out your call to SendEmails and use this method instead.
+            This method is not required to send emails but it is handy for checking your template logic.
+            Comment out your call to SendEmails and use this method instead as a template checker.
             AS WELL, always send yourself a TEST EMAIL through this process as an additional check!  I normally reserve one of the
             database tags to use with value TEST for test records, then create the filter to filter down to "TEST".
+            You could utilize that same filter when using this method.
         """
         for r in self.lstMailingList:
             html = self.htmlTemplate.render(r)
