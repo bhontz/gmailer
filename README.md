@@ -44,6 +44,8 @@ SMTP Authentication Error:  (535, b'5.7.8 Username and Password not accepted. Le
 ##### Version History
 This repo was originally created Sept, 2020 as an illustration for [GirlsCodeIt](https://www.girlscodeit.org).
 
+9/28/2020 - added testFilter method to support testing filter functions prior to mailing.
+
 ##### ACTIVE To-Dos    
 None at this time.
 

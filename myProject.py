@@ -16,13 +16,13 @@ from gmailer import Gmailer
     Create these in an ad-hoc nature specific to the mailing you are sending.
 """
 
-def Tag1Values(d, lstTagValues):
+def TagValues(d, lstTagValues):
     """
         Return TRUE if you have a match within the list of tags (strings)
     """
     bool = False
 
-    if d['TAG1'] in lstTagValues:
+    if d['TAG'] in lstTagValues:
         bool = True
 
     return bool
@@ -46,12 +46,14 @@ if __name__ == '__main__':
 
     mailing = Gmailer()
 
-    mailing.LoadCSV('CSVasDatabase.csv')  # load a CSV file with an example set of fields
-    mailing.filterList(filter(Python, mailing.lstMailingList))  # ... for this mailing, filter this list based on the Python function above
-    # mailing.filterList(filter(lambda d: TagValues(d, ['NEW','OLD']), mailing.lstMailingList))  # more complex filter example
+    mailing.LoadCSV('mailingData.csv')  # load a CSV file with an example set of fields
+    # mailing.filterList(filter(Python, mailing.lstMailingList))  # ... for this mailing, filter this list based on the Python function above
+    # mailing.filterList(filter(lambda d: TagValues(d, ['TEST']), mailing.lstMailingList))  # more complex filter example
 
-    mailing.setEmailSubject('Illustrative Email Subject Line')
-    mailing.setContentTemplate('ContentTemplateExample')
+    # mailing.testFilter(fields=['CONTACT', 'ENGAGED', 'TAG'])  # option fields arg includes fields beyond the default EMAIL
+
+    mailing.setEmailSubject('SIX WEEKS TO GO - Girl Scouts STEM Expo')
+    mailing.setContentTemplate('Exhibitor6WeeksOutX')
     # mailing.setAttachments(lstAttachmentFileNames)   # you can provide a list file names of attachments found in the attachments folder
 
     # mailing.testTemplate()  # useful method for testing your template logic.  use in place of SendEmails as a check before mailing

@@ -220,4 +220,23 @@ class Gmailer():
 
         return
 
+    def testFilter(self, fields=[]):
+        """
+            This method is not required to send emails but it is handy for checking your filter logic.
+            Comment out your call to SendEmails and call this method to return a list of the email addresses,
+            and optionally, other fields you specify in the fields argument.
+        """
+        showList = ['EMAIL']
+        showList.extend(fields)
+
+        for f in showList:   # print a header row
+                print("{},".format(str(f)), end='')  # end argument negates a newline after the print statement
+        print('\n')
+
+        for r in self.lstMailingList:
+            for f in showList:
+                print("{},".format(str(r[f])), end='')
+            print('\n')
+
+
 
