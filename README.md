@@ -46,8 +46,10 @@ This repo was originally created Sept, 2020 as an illustration for [GirlsCodeIt]
 
 9/28/2020 - added testFilter method to support testing filter functions prior to mailing.
 
+10/31/2020 - added the **editor** module which uses localhost to provide a WYSIWYG editor (tinymce) for the creation of the templated content you would use in your mailing projects.  Use of this module will create both the HTML and TXT versions of the content within the project's templates folder.  You do need to remember the filename that you used to save the content.
+
 ##### ACTIVE To-Dos    
-None at this time.
+Convert a Google Doc to a template (i.e. create both HTML/TXT template files from a Google Doc)
 
 ##### COMPLETED To-Dos    
 None at this time.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>GMAILER WYSIWYG CONTENT CREATOR</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"> referrerpolicy="origin"></script>
+
+        <script>
+          tinymce.init({
+            selector: 'textarea#editor',
+            height: 500,
+              formats: {
+                // Changes the default format for h6 to have a class of div
+                h6: { block: 'div', classes: 'div' }
+              },
+            browser_spellcheck: true,
+            menubar: false,
+            plugins: "link image code",
+            toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code | fontsizeselect'
+          });
+        </script>
+      </head>
+
+    <body>
+        <h1>Create your gmailer content template here!</h1>
+        <form method="post">
+            Document Filename: &nbsp;<input type="text" id="filename" name="filename" /><br/>
+            Body font-family: <select name="bodyfont" size="1">
+                <option value="verdana, geneva;">veranda</option>
+                <option value="arial;">arial</option>
+                <option value="sans-serif;">sans-serif</option>
+                <option value="monospace;">monospace</option>
+            </select>
+          <textarea id="editor" name="editor">Write your content here</textarea><br/>
+          <button type="submit">Save Template</button>
+        </form>
+    </body>
+</html>
