@@ -26,6 +26,9 @@ This process stores the sender's GMAIL account in a INI file named **emailcreden
 user = sender@gmail.com
 pwd = sendersSecretGmailPwd
 ```
+
+*NOTE: see VERSION HISTORY, 12/20/2020, for required additions to the INI structure)*
+
 Additionally, you must configure your GMAIL account to support SMTP sending.  This involves turning on "less secure app access".  Please note that Google will turn this off automagically if you are not using this email process for awhile (not exactly sure how long, maybe 30 days?) meaning you might have to reset this setting every once and awhile.
 
 Here's the process:
@@ -47,6 +50,8 @@ This repo was originally created Sept, 2020 as an illustration for [GirlsCodeIt]
 9/28/2020 - added testFilter method to support testing filter functions prior to mailing.
 
 10/31/2020 - added the **editor** module which uses localhost to provide a WYSIWYG editor (tinymce) for the creation of the templated content you would use in your mailing projects.  Use of this module will create both the HTML and TXT versions of the content within the project's templates folder.  You do need to remember the filename that you used to save the content.
+
+12/20/2020 - added server, port and from fields to the emailcredentials.ini file structure which will support sending from either GMAIL or from AWS SES.
 
 ##### ACTIVE To-Dos    
 Convert a Google Doc to a template (i.e. create both HTML/TXT template files from a Google Doc)

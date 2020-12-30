@@ -52,8 +52,8 @@ if __name__ == '__main__':
 
     # mailing.testFilter(fields=['CONTACT', 'ENGAGED', 'TAG'])  # option fields arg includes fields beyond the default EMAIL
 
-    mailing.setEmailSubject('SIX WEEKS TO GO - Girl Scouts STEM Expo')
-    mailing.setContentTemplate('Exhibitor6WeeksOutX')
+    mailing.setEmailSubject('AWS TEST EMAIL')
+    mailing.setContentTemplate('ContentTemplateExample')
     # mailing.setAttachments(lstAttachmentFileNames)   # you can provide a list file names of attachments found in the attachments folder
 
     # mailing.testTemplate()  # useful method for testing your template logic.  use in place of SendEmails as a check before mailing

@@ -154,7 +154,7 @@ class Gmailer():
         """
         msg = MIMEMultipart('alternative')
         msg['Subject'] = self.subject
-        msg['From'] = self.cfg.get('email', 'user')
+        msg['From'] = self.cfg.get('email', 'from')
         msg['To'] = recipientEmailAddress
 
         msg.attach(MIMEText(text, 'plain'))  # these are the templates rendered within method SendEmails
@@ -169,11 +169,11 @@ class Gmailer():
                     msg.attach(part)
                     fil.close()
         try:
-            smtpObj = smtplib.SMTP_SSL("smtp.gmail.com", 465)  # NOTE: SPECIFIC TO GMAIL HERE !!!
+            smtpObj = smtplib.SMTP_SSL(self.cfg.get('email', 'server'), self.cfg.get('email', 'port'))
             smtpObj.ehlo()
             smtpObj.login(self.cfg.get('email', 'user'),
                           self.cfg.get('email', 'pwd'))  # Credentials found in local file emailcredentials.ini
-            smtpObj.sendmail(self.cfg.get('email', 'user'), recipientEmailAddress,
+            smtpObj.sendmail(self.cfg.get('email', 'from'), recipientEmailAddress,
                              msg.as_string())  # this could be a list of addresses to loop over with a pause in between
 
             smtpObj.close()
